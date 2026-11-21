@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Certificate Verification – GES Academy</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#f3efe4;color:#1b2a49}
+.card{max-width:520px;margin:40px auto;background:#fff;border-radius:12px;box-shadow:0 2px 12px #0002;overflow:hidden}
+.hd{background:#1b2a49;color:#fff;padding:18px;text-align:center;font-size:18px;letter-spacing:1px}
+.bd{padding:28px;text-align:center}
+.ok{color:#1a8a3a;font-size:26px;font-weight:bold;margin-bottom:18px}
+.bad{color:#b3261e;font-size:24px;font-weight:bold;margin-bottom:12px}
+.n{font-size:26px;font-weight:bold;margin:8px 0}
+.r{margin:10px 0;color:#444}.r b{display:block;color:#1b2a49}
+.ft{padding:14px;text-align:center;font-size:12px;color:#777;border-top:1px solid #eee}
+</style></head><body>
+<div class="card"><div class="hd">GLOBAL EMIRATES SERVICES<br><small>Pest Control Technicians Academy</small></div>
+<div class="bd" id="o"></div>
+<div class="ft">Certificate verification</div></div>
+<script>
+var p=new URLSearchParams(location.search),o=document.getElementById('o');
+function e(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+var c=p.get('c'),n=p.get('n'),l=p.get('l'),d=p.get('d');
+if(c&&n&&l&&d&&/^GESA-\d{4}-\d{4}$/.test(c)){
+ o.innerHTML='<div class="ok">✔ Valid certificate</div><div class="r">This certifies that</div><div class="n">'+e(n)+'</div><div class="r">has successfully completed</div><div class="r"><b>'+e(l)+'</b></div><div class="r">Date<b>'+e(d)+'</b></div><div class="r">Certificate No.<b>'+e(c)+'</b></div>';
+}else{
+ o.innerHTML='<div class="bad">✖ Certificate not found</div><div class="r">Please scan the QR code on the certificate again.</div>';
+}
+</script></body></html>
